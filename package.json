@@ -1,0 +1,27 @@
+{
+  "name": "rest-shop",
+  "version": "1.0.0",
+  "description": "A Node.js RESTful API Tutorial Project (Build a simple shop API)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mustafaalpyanikoglu/NodeJS-RESTAPI.git"
+  },
+  "keywords": [
+    "node",
+    "restful",
+    "api"
+  ],
+  "author": "Maximilian Schwarzmüller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mustafaalpyanikoglu/NodeJS-RESTAPI/issues"
+  },
+  "homepage": "https://github.com/mustafaalpyanikoglu/NodeJS-RESTAPI#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
