@@ -141,6 +141,7 @@ router.delete('/:productId', (req, res, next) => {
         .exec()
         .then(result => {
             res.status(200).json({
+
                 message: 'Product deleted',
                 request: {
                     type: 'POST',
