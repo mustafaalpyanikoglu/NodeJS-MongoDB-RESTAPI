@@ -9,6 +9,8 @@ const orderRoutes = require('./api/routes/orders');
 
 mongoose.connect("mongodb+srv://mustafaalpyanikoglu:" + process.env.MONGO_ATLAS_PW + "@node-rest-shop.v3hrmf6.mongodb.net/?retryWrites=true&w=majority", );
 
+mongoose.Promise = global.Promise;
+
 /*mongoose.connect("mongodb+srv://mustafaalpyanikoglu:" + process.env.MONGO_ATLAS_PW + "@node-rest-shop.v3hrmf6.mongodb.net/?retryWrites=true&w=majority", {
     useMongoClient: true
 });*/
