@@ -1,5 +1,7 @@
 {
     "env": {
-        "MONGO_ATLAS_PW": "Mustafa.alp58"
+        "MONGO_ATLAS_PW": "Mustafa.alp58",
+        "JWT_KEY": "secret"
     }
+
 }
