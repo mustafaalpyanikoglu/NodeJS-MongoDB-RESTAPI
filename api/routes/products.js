@@ -2,13 +2,15 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const multer = require('multer');
+const checkAuth = require('../middleware/check-auth');
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, './uploads/');
     },
     filename: function(req, file, cb) {
-        //cb(null, new Date().toISOString() + file.originalname); hatalı
+        //cb(null, new Date().toISOString() + file.originalname);
+        //"ENOENT: no such file or directory, open 'C:\\Users\\Alp\\node-rest-shop\\uploads\\2022-11-14T13:54:03.352Zrick_grimes_farewell.jpg'"
         cb(null, file.originalname);
     }
 });
@@ -71,13 +73,15 @@ router.get('/', (req, res, next) => {
         });
 });
 
-router.post('/', upload.single('productImage'), (req, res, next) => {
+router.post('/', checkAuth, upload.single('productImage'), (req, res, next) => {
+
     const product = new Product({
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
         price: req.body.price,
         productImage: req.file.path
     });
+
     product
         .save()
         .then(result => {
